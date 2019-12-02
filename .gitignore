@@ -1,8 +1,8 @@
-server/node_modules/
-client/node_modules/
+node_modules
 data/
 .vscode/
 .DS_Store
 .idea
-server/.env
-client/.env
+.env
+.next
+yarn.lock
