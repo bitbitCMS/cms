@@ -4,6 +4,7 @@
  * can be found here: https://github.com/garmeeh/next-seo#default-seo-configuration
  */
 import App from 'next/app'
+import '../styles/index.css'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
