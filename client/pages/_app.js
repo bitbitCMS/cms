@@ -4,6 +4,7 @@
  * can be found here: https://github.com/garmeeh/next-seo#default-seo-configuration
  */
 import App from 'next/app'
+import { Fragment } from 'react'
 import '../styles/index.css'
 
 export default class MyApp extends App {
@@ -18,12 +19,15 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
+    const Layout = Component.Layout || Fragment
     return (
       /* Here we call NextSeo and pass our default configuration to it  */
       <>
         {/* TODO: implement nextseo  */}
         {/* <NextSeo config={SEO} /> */}
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </>
     )
   }
