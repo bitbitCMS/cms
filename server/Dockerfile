@@ -8,6 +8,6 @@ RUN npm install -g nodemon mysql2 sequelize sequelize-cli
 
 RUN mkdir data
 
-EXPOSE 3000
+EXPOSE 4000
 
 ENTRYPOINT npm install && nodemon
