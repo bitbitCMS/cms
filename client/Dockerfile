@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install -g nodemon
-
 EXPOSE 3000
 
-ENTRYPOINT npm install && nodemon
+ENTRYPOINT npm install && npm run dev
