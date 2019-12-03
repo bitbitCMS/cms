@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "eslint-config-airbnb": "^17.1.0",
     "@zeit/next-css": "^1.0.1",
     "next": "latest",
     "next-seo": "latest",
