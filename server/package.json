@@ -54,6 +54,7 @@
     "@root": ".",
     "@common": "modules/common",
     "@user": "modules/user",
+    "@post": "modules/post",
     "@config": "config"
   }
 }

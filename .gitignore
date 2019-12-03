@@ -5,4 +5,5 @@ data/
 .idea
 .env
 .next
+package-lock.json
 yarn.lock
