@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import BlogLayout from 'layouts/Bloglayout'
+import BlogLayout from 'layouts/BlogLayout'
 
 const Index = () => {
   return (
