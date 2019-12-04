@@ -6,6 +6,7 @@
 import App from 'next/app'
 import { Fragment } from 'react'
 import '../styles/index.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
