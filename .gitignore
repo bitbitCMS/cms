@@ -1,9 +1,11 @@
-node_modules
+client/node_modules
+server/node_modules
+client/package-lock.json
+server/package-lock.json
 data/
 .vscode/
 .DS_Store
 .idea
 .env
 .next
-package-lock.json
 yarn.lock
