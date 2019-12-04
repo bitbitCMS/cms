@@ -1,9 +1,16 @@
-import AppLayout from '../layouts/AppLayout'
+import Link from 'next/link'
+
+import BlogLayout from 'layouts/Bloglayout'
 
 const Index = () => {
-  return <h1>Welcome to Bitbit CMS</h1>
+  return (
+    <>
+      <h1>Ini Halaman Home Blog</h1>
+      <Link href="/admin">Ke halaman admin</Link>
+    </>
+  )
 }
 
-Index.Layout = AppLayout
+Index.Layout = BlogLayout
 
 export default Index
