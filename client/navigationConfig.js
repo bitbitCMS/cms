@@ -8,8 +8,22 @@ const navigationConfig = [
   {
     id: 'post',
     title: 'Post',
-    type: 'item',
-    href: '/admin/post'
+    type: 'collapse',
+    href: '/admin/post',
+    children: [
+      {
+        id: 'addpost',
+        title: 'Add Post',
+        type: 'item',
+        href: '/admin/post/add',
+      },
+      {
+        id: 'addpage',
+        title: 'Add Page',
+        type: 'item',
+        href: '/admin/page/add',
+      },
+    ]
   },
   {
     id: 'category',
