@@ -1,4 +1,5 @@
 const userRoute = require("@user/routes");
+const categoryRoute = require("@categories/routes");
 // const ZakyController = require("@zaky/controllers");
 // const AndrewController = require("@andrew/controllers");
 // const MarselinoController = require("@marselino/controllers");
@@ -23,12 +24,13 @@ module.exports = app => {
   // const aulianzaController = new AulianzaController();
   // const khaiController = new KhaiController();
 
-  
   app.route("/").get((req, res) => {
     res.send("Hi Apa Aceh, pastikan lagi asdf!");
   });
-  
+
   userRoute(app);
+  categoryRoute(app);
+
   // app.route("/zaky").get(zakyController.index);
 
   // app.route("/zaky/:id").get(zakyController.getById);
@@ -65,5 +67,4 @@ module.exports = app => {
 
   // app.route("/aulianza").get(aulianzaController.index);
   // app.route("/aulianza/:id").get(aulianzaController.getById);
-
 };
