@@ -44,7 +44,6 @@ class PostServices{
                 }
             };
         }
-
         const postAdd = await this.postModels.create(data);
 
         if(postAdd.affectedRows===0){
@@ -63,14 +62,27 @@ class PostServices{
     async getPostList(offset=0){
         const result = await this.postModels.getPostList(offset);
         return{
-            status: 200,
+            status: HttpStatus.OK,
             data: result,
             pagination: {
                 count_item: result.length,
                 limit: 10,
-                offset: 10
+                offset: offset
             }
         }
+    }
+
+    async postValidation(data){
+        const { post_title } = data;
+        const postWithTitle = await this.postModels.getPostByTitle(post_title);
+        if(postWithTitle.length > 0){
+            return [
+                {
+                    message: "Post Title already exist"
+                }
+            ];
+        }
+        return true;
     }
 }
 module.exports = PostServices;

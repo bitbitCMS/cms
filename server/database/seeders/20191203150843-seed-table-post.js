@@ -5,7 +5,7 @@ module.exports = {
       return queryInterface.bulkInsert('post', 
       [
         {
-          title: 'Post Article Day 1',
+          post_title: 'Post Article Day 1',
           published_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           status: 'published',
           created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
@@ -13,7 +13,7 @@ module.exports = {
           updated_by: 1
         },
         {
-          title: 'Post Article Day 2',
+          post_title: 'Post Article Day 2',
           published_at: Sequelize.literal('CURRENT_TIMESTAMP'),
           status: 'unpublished',
           created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
