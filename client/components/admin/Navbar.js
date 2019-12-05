@@ -77,8 +77,8 @@ const NavBar = () => {
                   </div>
                   <div className="row">
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="/static/images/bitbucket.png" alt="" /> <span>Bitbucket</span></a>
-                    </div>
+                  <a href="#" className="connection-item"><img src="/static/images/bitbucket.png" alt="" /> <span>Bitbucket</span></a>
+                </div>
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
                       <a href="#" className="connection-item"><img src="/static/images/mail_chimp.png" alt="" /><span>Mail chimp</span></a>
                     </div>
