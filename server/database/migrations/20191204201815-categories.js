@@ -20,7 +20,9 @@ module.exports = {
       updated_by: Sequelize.INTEGER(11),
       updated_at: {
         type: "TIMESTAMP",
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+        defaultValue: Sequelize.literal(
+          "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+        ),
         allowNull: false
       }
     });
