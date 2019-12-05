@@ -9,7 +9,10 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true
         },
-        title: Sequelize.STRING(50),
+        post_title: {
+          type: Sequelize.STRING(50),
+          allowNull: false
+        },
         published_at: Sequelize.DATE,
         status: Sequelize.STRING,
         created_at: Sequelize.DATE,
@@ -19,7 +22,7 @@ module.exports = {
           defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
           allowNull: false
         },
-        updated_by: Sequelize.STRING
+        updated_by: Sequelize.INTEGER
       });
   },
 
