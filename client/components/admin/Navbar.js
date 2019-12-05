@@ -22,7 +22,7 @@ const NavBar = () => {
                     <div className="list-group">
                       <a href="#" className="list-group-item list-group-item-action active">
                         <div className="notification-info">
-                          <div className="notification-list-user-img"><img src="/images/avatar-2.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
+                          <div className="notification-list-user-img"><img src="/static/images/avatar-2.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
                           <div className="notification-list-user-block"><span className="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
                                                         <div className="notification-date">2 min ago</div>
                           </div>
@@ -30,7 +30,7 @@ const NavBar = () => {
                       </a>
                       <a href="#" className="list-group-item list-group-item-action">
                         <div className="notification-info">
-                          <div className="notification-list-user-img"><img src="/images/avatar-3.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
+                          <div className="notification-list-user-img"><img src="/static/images/avatar-3.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
                           <div className="notification-list-user-block"><span className="notification-list-user-name">John Abraham </span>is now following you
                                                         <div className="notification-date">2 days ago</div>
                           </div>
@@ -38,7 +38,7 @@ const NavBar = () => {
                       </a>
                       <a href="#" className="list-group-item list-group-item-action">
                         <div className="notification-info">
-                          <div className="notification-list-user-img"><img src="assets/images/avatar-4.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
+                          <div className="notification-list-user-img"><img src="/static/images/avatar-4.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
                           <div className="notification-list-user-block"><span className="notification-list-user-name">Monaan Pechi</span> is watching your main repository
                                                         <div className="notification-date">2 min ago</div>
                           </div>
@@ -46,7 +46,7 @@ const NavBar = () => {
                       </a>
                       <a href="#" className="list-group-item list-group-item-action">
                         <div className="notification-info">
-                          <div className="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
+                          <div className="notification-list-user-img"><img src="/static/images/avatar-5.jpg" alt="" className="user-avatar-md rounded-circle" /></div>
                           <div className="notification-list-user-block"><span className="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
                                                         <div className="notification-date">2 min ago</div>
                           </div>
@@ -66,24 +66,24 @@ const NavBar = () => {
                 <li className="connection-list">
                   <div className="row">
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/github.png" alt="" /> <span>Github</span></a>
+                      <a href="#" className="connection-item"><img src="/static/images/github.png" alt="" /> <span>Github</span></a>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/dribbble.png" alt="" /> <span>Dribbble</span></a>
+                      <a href="#" className="connection-item"><img src="/static/images/dribbble.png" alt="" /> <span>Dribbble</span></a>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/dropbox.png" alt="" /> <span>Dropbox</span></a>
+                      <a href="#" className="connection-item"><img src="/static/images/dropbox.png" alt="" /> <span>Dropbox</span></a>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/bitbucket.png" alt="" /> <span>Bitbucket</span></a>
+                  <a href="#" className="connection-item"><img src="/static/images/bitbucket.png" alt="" /> <span>Bitbucket</span></a>
+                </div>
+                    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                      <a href="#" className="connection-item"><img src="/static/images/mail_chimp.png" alt="" /><span>Mail chimp</span></a>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/mail_chimp.png" alt="" /><span>Mail chimp</span></a>
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                      <a href="#" className="connection-item"><img src="assets/images/slack.png" alt="" /> <span>Slack</span></a>
+                      <a href="#" className="connection-item"><img src="/static/images/slack.png" alt="" /> <span>Slack</span></a>
                     </div>
                   </div>
                 </li>
@@ -92,18 +92,7 @@ const NavBar = () => {
                 </li>
               </ul>
             </li>
-            <li className="nav-item dropdown nav-user">
-              <a className="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" className="user-avatar-md rounded-circle" /></a>
-              <div className="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
-                <div className="nav-user-info">
-                  <h5 className="mb-0 text-white nav-user-name">John Abraham </h5>
-                  <span className="status"></span><span className="ml-2">Available</span>
-                </div>
-                <a className="dropdown-item" href="#"><i className="fas fa-user mr-2"></i>Account</a>
-                <a className="dropdown-item" href="#"><i className="fas fa-cog mr-2"></i>Setting</a>
-                <a className="dropdown-item" href="#"><i className="fas fa-power-off mr-2"></i>Logout</a>
-              </div>
-            </li>
+            
           </ul>
         </div>
       </nav>
