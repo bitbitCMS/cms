@@ -5,8 +5,8 @@ class PostModels{
         this.dbServices = new DBServices();
     }
 
-    async getPostList(){
-        const query = `SELECT * FROM post WHERE status='published'`
+    async getPostList(offset){
+        const query = `SELECT * FROM post WHERE status='published' LIMIT ${offset},10`
         return await this.dbServices.query(query)
     }
 }

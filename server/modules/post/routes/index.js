@@ -5,5 +5,7 @@ module.exports = app => {
 
     app.route("/post")
         .get(this.postControllers.postlist)
+    app.route("/post/:offset")
+        .get(this.postControllers.postlist)
 
 }

@@ -5,11 +5,16 @@ class PostServices{
         this.postModels = new PostModels();
     }
 
-    async getPostList(){
-        const result = await this.postModels.getPostList();
+    async getPostList(offset=0){
+        const result = await this.postModels.getPostList(offset);
         return{
             status: 200,
-            data: result
+            data: result,
+            pagination: {
+                count_item: result.length,
+                limit: 10,
+                offset: 10
+            }
         }
     }
 }

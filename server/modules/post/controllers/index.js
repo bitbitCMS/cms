@@ -7,9 +7,12 @@ class PostControllers{
     }
 
     async postlist(req,res){
-        const postList = await this.postServices.getPostList();
+        const postList = await this.postServices.getPostList(req.params.offset);
         res.status(postList.status)
-        res.send({data: postList.data})
+        res.send({
+            data: postList.data,
+            pagination: postList.pagination
+        })
     }
 }
 module.exports = PostControllers;
