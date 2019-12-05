@@ -13,7 +13,7 @@ class CategoryController {
 
     if (saveCategories.status === 201) {
       res.send({
-        data: saveCategories
+        id: saveCategories.id
       });
     }
 

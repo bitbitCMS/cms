@@ -18,13 +18,13 @@ class CategoryService {
   async create(data) {
     if (!data.name) {
       data.slug = "";
+    } else {
+      data.slug = slug(data.name, {
+        replacement: "-",
+        remove: null,
+        lower: true
+      });
     }
-    data.slug = slug(data.name, {
-      replacement: "-",
-      remove: null,
-      lower: true
-    });
-
     const category = {
       name: data.name,
       slug: data.slug,
@@ -65,7 +65,8 @@ class CategoryService {
     }
 
     return {
-      status: HttpStatus.NO_CONTENT
+      status: HttpStatus.CREATED,
+      id: categorySave.insertId
     };
   }
 
