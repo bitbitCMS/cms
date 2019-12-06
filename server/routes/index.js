@@ -1,5 +1,6 @@
 const userRoute = require("@user/routes");
 const categoryRoute = require("@categories/routes");
+const postRoute = require("@post/routes");
 // const ZakyController = require("@zaky/controllers");
 // const AndrewController = require("@andrew/controllers");
 // const MarselinoController = require("@marselino/controllers");
@@ -29,6 +30,8 @@ module.exports = app => {
   });
 
   userRoute(app);
+  postRoute(app);
+
   categoryRoute(app);
 
   // app.route("/zaky").get(zakyController.index);
