@@ -1,9 +1,10 @@
-const CategoryService = require("@categories/services");
+const CategoryService = require('@categories/services');
 
 class CategoryController {
   constructor() {
     this.categoryService = new CategoryService();
     this.create = this.create.bind(this);
+    this.index = this.index.bind(this);
   }
 
   async create(req, res) {
@@ -19,6 +20,13 @@ class CategoryController {
 
     res.send({
       error: saveCategories.error
+    });
+  }
+
+  async index(req, res) {
+    const categories = await this.categoryService.index(req.query);
+    res.send({
+      categories
     });
   }
 }
