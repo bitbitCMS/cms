@@ -32,7 +32,6 @@ class CategoryService {
     );
 
     return {
-      status: HttpStatus.ACCEPTED,
       data: categories,
       pagination: {
         total_item: totalCategories,

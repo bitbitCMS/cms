@@ -25,9 +25,7 @@ class CategoryController {
 
   async index(req, res) {
     const categories = await this.categoryService.index(req.query);
-    res.send({
-      categories
-    });
+    res.send(categories);
   }
 }
 
