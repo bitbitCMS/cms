@@ -10,7 +10,6 @@ import axios from 'axios'
 
 const Category = () => {
   const [data, setdata] = useState({name:"", description:''})
-  const [alert, setAlert] = useState('show');
   const [errors, setErrors] = useState([]);
 
   const onChange = ({target}) => {
@@ -49,7 +48,7 @@ const Category = () => {
       <>
       {
         errors.map(item => (
-          <Alert message={`${item} is required`} show={alert} onClick={()=>handleAlert(item)}/>
+          <Alert message={`${item} is required`} onClick={()=>handleAlert(item)}/>
         ))
       }
 
@@ -62,7 +61,7 @@ const Category = () => {
           <div className="form-group">
               <label htmlFor="exampleFormControlTextarea1">Description</label>
               <textarea className="form-control"  rows="8" name="description" onChange={onChange} autoComplete="false"></textarea>
-              <small>The description is prominent by default; hoever, some themes may show it</small>
+              <small>The description is prominent by default; however, some themes may show it</small>
           </div>
           <input type="submit" className="btn btn-primary" onClick={handleSubmit} value="Add New Category" />
       </form>
