@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import AdminLayout from 'layouts/AdminLayout'
 import env from 'Config';
-import Alert from 'components/admin/Alert'
+import Alert from 'lib/Alert'
 import axios from 'axios'
 
 // const env = dotenv.config().parsed;

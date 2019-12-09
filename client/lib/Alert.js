@@ -1,8 +1,6 @@
-import { useState } from "react"
 import clsx from 'clsx'
 
 const Alert = (props) => {
-
     return (
         <div className={clsx("alert alert-warning alert-dismissible fade show")} role="alert">
             {props.message}
@@ -13,4 +11,4 @@ const Alert = (props) => {
     )
 }
 
-export default Alert;
+export default Alert
