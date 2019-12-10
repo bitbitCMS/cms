@@ -59,7 +59,6 @@ class PostServices{
         }
     }
     
-<<<<<<< HEAD
     async getPostList(offset=0){
         const result = await this.postModels.getPostList(offset);
         
@@ -87,10 +86,13 @@ class PostServices{
             }
           }
         }
+
+        return {
+          status: HttpStatus.INTERNAL_SERVER_ERROR,
+          error: 'Internal Server Error'
+        }
     }
 
-=======
->>>>>>> develop
     async postValidation(data){
         const { slug } = data;
         const postWithTitle = await this.postModels.getPostBySlug(slug);

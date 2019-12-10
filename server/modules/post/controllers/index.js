@@ -5,6 +5,7 @@ class PostControllers{
         this.postServices = new PostServices();
         this.addPost = this.addPost.bind(this);
         this.updatePost = this.updatePost.bind(this);
+        this.postlist = this.postlist.bind(this);
     }
 
     async addPost(req,res){
@@ -30,5 +31,15 @@ class PostControllers{
             res.send({error: updatePost.error});
         }
     }
+
+    async postlist(req,res){
+        const postList = await this.postServices.getPostList(req.params.offset);
+        res.status(postList.status)
+        res.send({
+            data: postList.data,
+            pagination: postList.pagination
+        })
+    }
+
 }
 module.exports = PostControllers;
