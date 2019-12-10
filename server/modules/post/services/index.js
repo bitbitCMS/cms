@@ -59,6 +59,7 @@ class PostServices{
         }
     }
     
+<<<<<<< HEAD
     async getPostList(offset=0){
         const result = await this.postModels.getPostList(offset);
         
@@ -88,9 +89,11 @@ class PostServices{
         }
     }
 
+=======
+>>>>>>> develop
     async postValidation(data){
-        const { post_title } = data;
-        const postWithTitle = await this.postModels.getPostByTitle(post_title);
+        const { slug } = data;
+        const postWithTitle = await this.postModels.getPostBySlug(slug);
         if(postWithTitle.length > 0){
             return [
                 {
@@ -99,6 +102,47 @@ class PostServices{
             ];
         }
         return true;
+    }
+
+    async update(data){
+        const id = data.id;
+        delete(data.id);
+        const isFormValid = this.validator.validate(data,this.schema);
+        if(isFormValid!==true){
+            return{
+                status: HttpStatus.BAD_REQUEST,
+                error: {
+                    error_code: 'FORM_VALIDATION',
+                    message: isFormValid,
+                }
+            }
+        }
+
+        //TODO:
+        /*
+        const isExist = this.postValidation(data);
+        if(isExist==true){
+            return {
+                status: HttpStatus.BAD_REQUEST,
+                error: {
+                    error_code: 'DATA_VALIDATION',
+                    message: isExist,
+                }
+            }
+        }
+        */
+        const updatePost = await this.postModels.update(id,data);
+        if(updatePost.affectedRows===0){
+            return {
+                status: HttpStatus.INTERNAL_SERVER_ERROR,
+                message: 'Internal Server Error',
+            }
+        }
+
+        return {
+            status: HttpStatus.CREATED,
+            id: id,
+        }
     }
 }
 module.exports = PostServices;

@@ -10,9 +10,9 @@ class PostModels{
         return await this.dbServices.query(query)
     }
 
-    async getPostByTitle(post_title){
-        const query = `SELECT * FROM post WHERE post_title=?`;
-        return await this.dbServices.query(query,post_title);
+    async getPostBySlug(slug){
+        const query = `SELECT * FROM post WHERE slug=?`;
+        return await this.dbServices.query(query,slug);
     }
 
     async create(data){
@@ -20,9 +20,9 @@ class PostModels{
         return await this.dbServices.query(query,data);
     }
 
-    async updatePost(id,data){
+    async update(id,data){
         const query = `UPDATE post SET ? WHERE id=?`;
-        return await this.dbServices.query(query,[id,data]);
+        return await this.dbServices.query(query,[data,id]);
     }
 
     async getCategoriesByPostsId(postsId){
