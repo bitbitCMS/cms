@@ -1,11 +1,11 @@
-const PostServices = require("@post/services");
+const PostServices = require("@posts/services");
 
 class PostControllers{
     constructor(){
         this.postServices = new PostServices();
         this.addPost = this.addPost.bind(this);
         this.updatePost = this.updatePost.bind(this);
-        this.postlist = this.postlist.bind(this);
+        this.postList = this.postList.bind(this);
     }
 
     async addPost(req,res){
@@ -32,8 +32,8 @@ class PostControllers{
         }
     }
 
-    async postlist(req,res){
-        const postList = await this.postServices.getPostList(req.params.offset);
+    async postList(req,res){
+        const postList = await this.postServices.getPostList(req.query);
         res.status(postList.status)
         res.send({
             data: postList.data,

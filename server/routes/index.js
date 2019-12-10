@@ -1,6 +1,6 @@
 const userRoute = require("@user/routes");
 const categoryRoute = require("@categories/routes");
-const postRoute = require("@post/routes");
+const postRoute = require("@posts/routes");
 // const ZakyController = require("@zaky/controllers");
 // const AndrewController = require("@andrew/controllers");
 // const MarselinoController = require("@marselino/controllers");

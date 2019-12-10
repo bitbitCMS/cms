@@ -5,10 +5,16 @@ class PostModels{
         this.dbServices = new DBServices();
     }
 
-    async getPostList(offset){
-        const query = `SELECT * FROM post WHERE status='published' LIMIT ${offset},10`
+    async getPostList(offset=0, limit=10){
+        const query = `SELECT * FROM post WHERE status=1 LIMIT ${offset},${limit}`
         return await this.dbServices.query(query)
     }
+
+    async getPagination(){
+        const query = `SELECT COUNT(id) AS total_item FROM post WHERE status=1`
+        const result = await this.dbServices.query(query)
+        return result[0].total_item
+    } 
 
     async getPostBySlug(slug){
         const query = `SELECT * FROM post WHERE slug=?`;

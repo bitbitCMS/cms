@@ -1,4 +1,4 @@
-const PostModels = require('@post/models');
+const PostModels = require('@posts/models');
 const Validate = require("fastest-validator");
 const HttpStatus = require("http-status-codes");
 const slug = require("slugify");
@@ -59,8 +59,9 @@ class PostServices{
         }
     }
     
-    async getPostList(offset=0){
-        const result = await this.postModels.getPostList(offset);
+    async getPostList(query){
+        const { offset,limit } = query;
+        const result = await this.postModels.getPostList(offset,limit);
         
         if(result.errorCode === undefined){
           const postsMapping = [];
@@ -76,14 +77,16 @@ class PostServices{
             postsMapping[item.posts_id].categories.push(item)
           })
 
+          const postsPagination = await this.postModels.getPagination(offset, limit);
+
           return{
             status: HttpStatus.OK,
             data: postsMapping.filter(item => item != null),
             pagination: {
-                count_item: result.length,
-                limit: 10,
-                offset: offset
-            }
+                total_posts: postsPagination,
+                limit,
+                offset,
+            },
           }
         }
 
@@ -143,7 +146,7 @@ class PostServices{
 
         return {
             status: HttpStatus.CREATED,
-            id: id,
+            id: updatePost,
         }
     }
 }
