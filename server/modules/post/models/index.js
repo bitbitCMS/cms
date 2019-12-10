@@ -24,6 +24,15 @@ class PostModels{
         const query = `UPDATE post SET ? WHERE id=?`;
         return await this.dbServices.query(query,[id,data]);
     }
+
+    async getCategoriesByPostsId(postsId){
+        const query = `SELECT pc.posts_id, c.name, c.id as category_id FROM posts_categories pc
+          LEFT JOIN categories c ON c.id = pc.categories_id
+          WHERE pc.posts_id IN (?)`;
+        
+        const result = await this.dbServices.query(query, [postsId]);
+        return result;
+    }
 }
 
 module.exports = PostModels;

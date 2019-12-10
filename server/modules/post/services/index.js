@@ -61,14 +61,30 @@ class PostServices{
     
     async getPostList(offset=0){
         const result = await this.postModels.getPostList(offset);
-        return{
+        
+        if(result.errorCode === undefined){
+          const postsMapping = [];
+          result.forEach((item) => {
+            postsMapping[item.id] = item;
+          })
+
+          const postsCategories = await this.postModels.getCategoriesByPostsId([...postsMapping.keys()]);
+          postsCategories.forEach((item) => {
+            if(!postsMapping[item.posts_id].categories){
+              postsMapping[item.posts_id].categories = new Array();
+            }
+            postsMapping[item.posts_id].categories.push(item)
+          })
+
+          return{
             status: HttpStatus.OK,
-            data: result,
+            data: postsMapping.filter(item => item != null),
             pagination: {
                 count_item: result.length,
                 limit: 10,
                 offset: offset
             }
+          }
         }
     }
 
