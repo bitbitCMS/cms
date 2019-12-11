@@ -59,6 +59,6 @@
     "@user": "modules/user",
     "@config": "config",
     "@categories": "modules/categories",
-    "@post": "modules/post"
+    "@posts": "modules/posts"
   }
 }

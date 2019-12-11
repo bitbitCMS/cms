@@ -1,4 +1,4 @@
-const PostControllers = require("@post/controllers");
+const PostControllers = require("@posts/controllers");
 
 module.exports = app => {
     this.postControllers = new PostControllers();
@@ -6,5 +6,5 @@ module.exports = app => {
     app.route("/post")
       .post(this.postControllers.addPost)
       .put(this.postControllers.updatePost)
-      .get(this.postControllers.postlist)
+      .get(this.postControllers.postList)
 }
